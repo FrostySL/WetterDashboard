@@ -12,8 +12,7 @@ namespace WetterDashboard
 
         public App()
         {
-            _host = Host.CreateDefaultBuilder()
-                .ConfigureServices((context, services) =>
+            _host = Host.CreateDefaultBuilder().ConfigureServices((context, services) =>
                 {
                     ConfigureServices(services);
                 })
