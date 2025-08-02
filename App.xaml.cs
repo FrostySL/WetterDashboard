@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using WetterDashboard.Services;
 using WetterDashboard.ViewModels;
 using WetterDashboard.Views;
 
@@ -23,6 +24,7 @@ namespace WetterDashboard
         {
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<MainWindow>();
+            services.AddHttpClient<IWeatherService, WeatherService>();
         }
 
         protected override async void OnStartup(StartupEventArgs e)
